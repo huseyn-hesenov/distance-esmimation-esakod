@@ -148,6 +148,8 @@ while True:
         cv.putText(frame,"koordinat=>"+ "x:"+str(x)+" "+"y:"+str(y), (7, 110   ), font, 1, (100, 255, 0), 2, cv.LINE_AA)
         #cv.putText(frame, "obyekt sureti:"+averageSpeed, (7, 150), font, 1, (100, 255, 0), 2, cv.LINE_AA)
 
+
+
     t = time.strftime('%H:%M:%S')
     size = cv.getTextSize(t, cv.FONT_HERSHEY_COMPLEX, 1, 2)[0]
 
@@ -155,16 +157,6 @@ while True:
     cv.putText(frame, t, (500,size[1]), cv.FONT_HERSHEY_COMPLEX, 0.9, (0,), 9)
     cv.putText(frame, t, (500,size[1]), cv.FONT_HERSHEY_COMPLEX, 0.9, (255,255,255), 1)
     cv.imshow('izleme sistemi',frame)
-    #cv.imshow('izleme sistemi',frame)
-
-    #gray = frame
-
-	# resizing the frame size according to our need
-    #gray = cv.resize(gray, (500, 300))
-	# displaying the frame with fps
-   # cv.imshow('frame', gray)
-
-
     key = cv.waitKey(1)
     if key ==ord('q'):
         break
