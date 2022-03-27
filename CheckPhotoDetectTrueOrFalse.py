@@ -16,7 +16,7 @@ class_names = []
 with open("classes.txt", "r") as f:
     class_names = [cname.strip() for cname in f.readlines()]
 #  setttng up opencv net
-yoloNet = cv.dnn.readNet('yolov4-tiny.weights', 'yolov4-tiny.cfg')
+yoloNet = cv.dnn.readNet('yolo-drone.weights', 'yolo-drone.cfg')
 
 yoloNet.setPreferableBackend(cv.dnn.DNN_BACKEND_CUDA)
 yoloNet.setPreferableTarget(cv.dnn.DNN_TARGET_CUDA_FP16)
@@ -63,7 +63,7 @@ while True:
     if key == ord('c'):
         capture = True
         number += 1
-        cv.imwrite(f'ReferenceImages/image{number}.png', orignal)
+        cv.imwrite(f'ReferenceImages/imageDrone{number}.jpg', orignal)
     if key == ord('q'):
         break
 cv.destroyAllWindows()
